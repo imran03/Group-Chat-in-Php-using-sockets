@@ -1,0 +1,223 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: May 23, 2018 at 05:09 PM
+-- Server version: 5.7.22-0ubuntu0.16.04.1
+-- PHP Version: 7.1.17-1+ubuntu16.04.1+deb.sury.org+1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `onlinechat`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `uid` int(50) NOT NULL,
+  `fullname` varchar(30) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `useronline` tinyint(1) NOT NULL,
+  `is_admin` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`uid`, `fullname`, `password`, `username`, `useronline`, `is_admin`) VALUES
+(6, 'abcdef', '202cb962ac59075b964b07152d234b70', '123', 0, 0),
+(7, '1111', '81dc9bdb52d04dc20036dbd8313ed055', 'ii', 0, 0),
+(8, 'adas', 'c9c35cf409344312146fa7546a94d1a6', 'sada', 0, 0),
+(10, 'ahmed', '81dc9bdb52d04dc20036dbd8313ed055', 'ahmed', 0, 0),
+(12, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin', 0, 1),
+(13, 'imran', '73bebce395b6f1efedcf6842fbdb4d76', 'im', 0, 0),
+(14, 'joy ', 'c2c8e798aecbc26d86e4805114b03c51', 'joy', 0, 0),
+(15, 'codilar', 'ad3b1f0915c59133e24f860e623dcdfd', 'codilar', 0, 0),
+(16, 'john', '81dc9bdb52d04dc20036dbd8313ed055', 'john', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `messageId` int(11) NOT NULL,
+  `msgRegisterDate` datetime(6) NOT NULL,
+  `messageBody` varchar(100) NOT NULL,
+  `messageSession` varchar(100) NOT NULL,
+  `messageSenderId` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`messageId`, `msgRegisterDate`, `messageBody`, `messageSession`, `messageSenderId`) VALUES
+(43, '2018-05-22 11:18:27.000000', 'gregreg', '', 6),
+(44, '2018-05-22 11:18:28.000000', 'regreg', '', 6),
+(46, '2018-05-22 11:19:36.000000', 'fsdf', '', 10),
+(47, '2018-05-22 11:19:37.000000', 'dsfsd', '', 10),
+(48, '2018-05-22 11:19:44.000000', 'ff', '', 6),
+(49, '2018-05-22 11:19:59.000000', 'mgomg', '', 10),
+(50, '2018-05-22 11:20:02.000000', 'grgrg', '', 10),
+(51, '2018-05-22 11:22:55.000000', 'mohammed', '', 10),
+(52, '2018-05-22 11:22:56.000000', 'dfsf', '', 10),
+(53, '2018-05-22 11:23:11.000000', 'fsf', '', 6),
+(54, '2018-05-22 11:23:12.000000', 'fef', '', 6),
+(55, '2018-05-22 11:23:12.000000', 'fef', '', 6),
+(56, '2018-05-22 11:23:12.000000', 'efe', '', 6),
+(57, '2018-05-22 11:23:13.000000', 'fewfegreg', '', 6),
+(58, '2018-05-22 11:27:19.000000', 'kgmnorg', '', 10),
+(59, '2018-05-22 11:27:20.000000', 'rgrg', '', 10),
+(60, '2018-05-22 11:27:27.000000', 'gggggggggggggggg', '', 6),
+(61, '2018-05-22 11:28:44.000000', 'g,prg', '', 10),
+(62, '2018-05-22 11:28:46.000000', 'grgr', '', 10),
+(63, '2018-05-22 11:28:47.000000', 'grgre', '', 10),
+(64, '2018-05-22 11:28:53.000000', 'gregreg', '', 6),
+(65, '2018-05-22 11:28:54.000000', 'grger', '', 6),
+(66, '2018-05-22 11:28:55.000000', 'greger', '', 6),
+(67, '2018-05-22 11:28:56.000000', 'gregreg', '', 6),
+(68, '2018-05-22 11:29:17.000000', 'wwwwwwwwwwwwwww', '', 6),
+(69, '2018-05-22 11:35:09.000000', 'dfdfdf', '', 6),
+(70, '2018-05-22 11:35:10.000000', 'dcdsc', '', 6),
+(71, '2018-05-22 11:35:11.000000', 'dscdscdscdscd', '', 6),
+(72, '2018-05-22 11:37:25.000000', 'grmrhmtrrt', '', 10),
+(73, '2018-05-22 11:37:26.000000', 'ergerg', '', 10),
+(74, '2018-05-22 11:37:26.000000', 'eger', '', 10),
+(75, '2018-05-22 11:37:27.000000', 'regre', '', 10),
+(76, '2018-05-22 11:37:27.000000', 'gregre', '', 10),
+(77, '2018-05-22 11:37:28.000000', 'greg', '', 10),
+(78, '2018-05-22 11:37:29.000000', 'rewefrg', '', 10),
+(79, '2018-05-22 11:37:29.000000', 'wdfg', '', 10),
+(80, '2018-05-22 11:38:31.000000', 'deferff', '', 10),
+(81, '2018-05-22 11:38:33.000000', 'rvrv', '', 10),
+(82, '2018-05-22 11:49:44.000000', 'fmwokemfw', '', 10),
+(83, '2018-05-22 11:49:45.000000', 'fwefw', '', 10),
+(84, '2018-05-22 11:49:46.000000', 'wef', '', 10),
+(90, '2018-05-22 11:52:43.000000', 'mfepf', '', 10),
+(91, '2018-05-22 11:52:44.000000', 'wfewf', '', 10),
+(92, '2018-05-22 11:52:44.000000', 'ewf', '', 10),
+(93, '2018-05-22 11:52:45.000000', 'fef', '', 10),
+(94, '2018-05-22 11:52:45.000000', 'ewfew', '', 10),
+(95, '2018-05-22 11:54:46.000000', 'ccwcwcc', '', 6),
+(96, '2018-05-22 11:54:47.000000', 'cwecwec', '', 6),
+(99, '2018-05-22 12:26:28.000000', 'cccccccccccccccccc', '', 6),
+(106, '2018-05-22 12:38:34.000000', 'cscscsc', '', 6),
+(107, '2018-05-22 12:38:35.000000', 'cdscds', '', 6),
+(109, '2018-05-22 12:47:33.000000', 'oijoi', '', 6),
+(110, '2018-05-22 12:47:35.000000', 'nini', '', 6),
+(127, '2018-05-22 16:10:46.000000', 'ccccccccc', '', 10),
+(130, '2018-05-23 12:47:57.000000', 'hai', '', 13),
+(131, '2018-05-23 12:47:59.000000', 'hello', '', 13),
+(132, '2018-05-23 12:48:03.000000', 'okay', '', 13),
+(133, '2018-05-23 12:48:05.000000', 'k', '', 13),
+(134, '2018-05-23 12:48:07.000000', 'lol', '', 13),
+(135, '2018-05-23 12:48:11.000000', 'tree', '', 13),
+(136, '2018-05-23 12:48:15.000000', 'banana', '', 13),
+(137, '2018-05-23 12:48:16.000000', 'fdf', '', 13),
+(138, '2018-05-23 12:48:20.000000', 'icici', '', 13),
+(139, '2018-05-23 12:48:25.000000', 'codilar', '', 13),
+(140, '2018-05-23 12:48:32.000000', 'kodak', '', 13),
+(141, '2018-05-23 12:48:38.000000', 'pictures', '', 13),
+(142, '2018-05-23 15:45:01.000000', 'hi', '', 10),
+(143, '2018-05-23 15:45:09.000000', 'nfiejf', '', 10),
+(144, '2018-05-23 15:45:11.000000', 'qwerhjk', '', 10),
+(145, '2018-05-23 15:45:12.000000', 'fghjk', '', 10),
+(146, '2018-05-23 15:45:13.000000', 'dsfghg', '', 10),
+(147, '2018-05-23 15:45:15.000000', 'qwertyuio', '', 10),
+(148, '2018-05-23 15:45:17.000000', 'asdfghjk', '', 10),
+(149, '2018-05-23 15:45:19.000000', 'fghjkl', '', 10),
+(150, '2018-05-23 15:45:27.000000', 'fyghuijok', '', 13),
+(151, '2018-05-23 15:45:28.000000', 'ghjkl', '', 13),
+(152, '2018-05-23 15:45:30.000000', 'fsgdshfjklgf', '', 13),
+(153, '2018-05-23 15:45:33.000000', 'vghbjnklvghjk', '', 13),
+(154, '2018-05-23 15:45:38.000000', 'ghjkljkldifldfdjof;fj', '', 13),
+(155, '2018-05-23 15:45:41.000000', 'fefeffffffffffffffffffffffffffffffff', '', 13),
+(156, '2018-05-23 15:45:46.000000', 'cyvguhjklyvubjkl', '', 13),
+(157, '2018-05-23 15:45:51.000000', 'yudyiytuioyuio', '', 13),
+(158, '2018-05-23 15:45:54.000000', 'ubjkllhijl', '', 13),
+(159, '2018-05-23 15:45:57.000000', 'dfghj', '', 13),
+(160, '2018-05-23 15:46:28.000000', 'indwqkm', '', 13),
+(161, '2018-05-23 15:46:30.000000', 'ctfvyghunji', '', 13),
+(162, '2018-05-23 15:46:33.000000', 'cvtybnuim', '', 13),
+(163, '2018-05-23 16:00:58.000000', '(MOV). This type contains a ceramic mass of zinc oxide grains, in a matrix of other metal oxides (su', '', 13),
+(164, '2018-05-23 16:41:59.000000', 'imm', '', 13),
+(165, '2018-05-23 17:07:26.000000', 'eomrfoirejg', '', 10),
+(166, '2018-05-23 17:07:27.000000', 'rgergjorg', '', 10),
+(167, '2018-05-23 17:07:48.000000', 'iuenfie', '', 10),
+(168, '2018-05-23 17:07:57.000000', 'oieroigre', '', 10),
+(169, '2018-05-23 17:07:58.000000', 'ergerger', '', 10),
+(170, '2018-05-23 17:07:59.000000', 'grregreg', '', 10),
+(171, '2018-05-23 17:08:00.000000', 'ergregrgr', '', 10),
+(172, '2018-05-23 17:08:02.000000', 'erggggggggggggggg', '', 10),
+(173, '2018-05-23 17:08:27.000000', 'fioewnf', '', 13),
+(174, '2018-05-23 17:08:28.000000', 'efef', '', 13),
+(175, '2018-05-23 17:08:29.000000', 'gergerg', '', 13),
+(176, '2018-05-23 17:08:34.000000', 'gergr', '', 10),
+(177, '2018-05-23 17:08:43.000000', 'ioioooooooooo', '', 13);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`uid`);
+
+--
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`messageId`),
+  ADD KEY `messages_ibfk_1` (`messageSenderId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `uid` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `messageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `messages`
+--
+ALTER TABLE `messages`
+  ADD CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`messageSenderId`) REFERENCES `chat` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
